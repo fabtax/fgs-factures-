@@ -16,9 +16,9 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);font-famil
 #hdr{background:var(--ink);display:flex;align-items:center;justify-content:space-between;padding:10px 16px;flex-shrink:0}
 .logo{font-family:Georgia,serif;font-size:22px;color:#6b9be8}
 #hn{font-size:12px;color:rgba(255,255,255,.6)}
-.bn{background:var(--ac);color:#fff;border:none;padding:8px 14px;font-size:12px;font-weight:700;border-radius:4px;cursor:pointer;font-family:inherit}
+.bn{background:var(--ac);color:#fff;border:none;padding:8px 14px;font-size:12px;font-weight:700;border-radius:4px;cursor:pointer;font-family:inherit;-webkit-appearance:none}
 #tabs{display:flex;background:var(--wh);border-bottom:1px solid var(--bd);flex-shrink:0}
-.tab{flex:1;padding:11px 4px;text-align:center;font-size:12px;font-weight:600;color:var(--ink3);border-bottom:3px solid transparent;cursor:pointer;user-select:none;-webkit-user-select:none;text-decoration:none;display:block}
+.tab{flex:1;padding:11px 4px;text-align:center;font-size:12px;font-weight:600;color:var(--ink3);border-bottom:3px solid transparent;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent;-webkit-appearance:none}
 .tab.on{color:var(--ac);border-bottom-color:var(--ac)}
 #cnt{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .wrap{padding:12px;display:flex;flex-direction:column;gap:12px;max-width:800px;margin:0 auto}
@@ -45,7 +45,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);font-famil
 .lg input{text-align:center}
 .lg input.r{text-align:right}
 .lmt{font-size:13px;font-weight:600;text-align:right}
-.x{background:none;border:none;color:#ccc;font-size:20px;cursor:pointer;padding:0;width:100%;text-align:center;font-family:inherit}
+.xb{background:none;border:none;color:#ccc;font-size:20px;cursor:pointer;padding:0;width:100%;text-align:center;font-family:inherit;-webkit-appearance:none}
 .tots{padding:12px 14px}
 .tr{display:flex;justify-content:space-between;font-size:13px;padding:3px 0}
 .tr .lb{color:var(--ink3)}
@@ -54,7 +54,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);font-famil
 .nl{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
 .na{font-size:22px;font-weight:700}
 .acts{display:flex;gap:8px;padding:12px}
-.ba{flex:1;padding:13px 6px;font-family:inherit;font-size:12px;font-weight:700;border-radius:6px;cursor:pointer;text-align:center;border:none}
+.ba{flex:1;padding:13px 6px;font-family:inherit;font-size:12px;font-weight:700;border-radius:6px;cursor:pointer;text-align:center;border:none;-webkit-appearance:none}
 .sec{background:var(--wh);color:var(--ink);border:1px solid var(--bd)}
 .acc{background:var(--ac);color:#fff}
 .pri{background:var(--ink);color:#fff}
@@ -63,7 +63,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);font-famil
 .bk.b{background:#fff3cd;color:#856404}
 .bk.e{background:#d1e7dd;color:#0f5132}
 .cc{padding:14px 16px;border-bottom:1px solid var(--bd)}
-.bsm{padding:6px 14px;font-size:11px;font-family:inherit;font-weight:600;border-radius:4px;cursor:pointer;border:1px solid var(--bd);background:transparent;color:var(--ink3)}
+.bsm{padding:6px 14px;font-size:11px;font-family:inherit;font-weight:600;border-radius:4px;cursor:pointer;border:1px solid var(--bd);background:transparent;color:var(--ink3);-webkit-appearance:none}
 .bsm.dg{border-color:#c00;color:#c00}
 .mb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:500;align-items:flex-end;justify-content:center}
 .mb.open{display:flex}
@@ -71,10 +71,10 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);font-famil
 .md h3{font-size:18px;font-weight:700;margin-bottom:16px}
 .mf{margin-bottom:12px}
 .mf label{display:block;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ink3);margin-bottom:4px}
-.mf input{width:100%;border:1px solid var(--bd);border-radius:6px;padding:10px 12px;font-family:inherit;font-size:14px;outline:none;background:var(--bg)}
+.mf input{width:100%;border:1px solid var(--bd);border-radius:6px;padding:10px 12px;font-family:inherit;font-size:14px;outline:none;background:var(--bg);-webkit-appearance:none}
 .mf input:focus{border-color:var(--ac)}
 .mba{display:flex;gap:10px;margin-top:20px}
-.mba button{flex:1;padding:13px;font-family:inherit;font-size:14px;font-weight:700;border-radius:8px;cursor:pointer;border:none}
+.mba button{flex:1;padding:13px;font-family:inherit;font-size:14px;font-weight:700;border-radius:8px;cursor:pointer;border:none;-webkit-appearance:none}
 .mc{background:#f0f0f0;color:var(--ink)}
 .mo{background:var(--ink);color:#fff}
 .md2{background:#c00;color:#fff}
@@ -91,13 +91,13 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);font-famil
     <div class="logo">TAXI</div>
     <div style="display:flex;gap:8px;align-items:center">
       <span id="hn">FAC-2026-001</span>
-      <button class="bn" onclick="nouv()">+ Nouvelle</button>
+      <button class="bn" id="btn-nouv">+ Nouvelle</button>
     </div>
   </div>
   <div id="tabs">
-    <a class="tab on" href="javascript:void(0)" onclick="goTab('f',this);return false;">Facture</a>
-    <a class="tab" href="javascript:void(0)" onclick="goTab('h',this);return false;">Historique</a>
-    <a class="tab" href="javascript:void(0)" onclick="goTab('c',this);return false;">Clients</a>
+    <button type="button" class="tab on" id="t-f">Facture</button>
+    <button type="button" class="tab" id="t-h">Historique</button>
+    <button type="button" class="tab" id="t-c">Clients</button>
   </div>
   <div id="cnt">
     <div id="tab-f">
@@ -106,24 +106,24 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);font-famil
           <div class="ch">Informations</div>
           <div class="cb">
             <div class="fr">
-              <div class="fi"><label>N Facture</label><input type="text" id="fnum" autocomplete="off" oninput="document.getElementById('hn').textContent=this.value"></div>
+              <div class="fi"><label>N Facture</label><input type="text" id="fnum" autocomplete="off"></div>
               <div class="fi"><label>Date</label><input type="date" id="fdate"></div>
             </div>
             <div class="fr">
               <div class="fi"><label>Echeance</label><input type="date" id="fech"></div>
-              <div class="fi"><label>Client</label><select id="fsel" onchange="selC(this.value)"><option value="">-- Choisir --</option></select></div>
+              <div class="fi"><label>Client</label><select id="fsel"><option value="">-- Choisir --</option></select></div>
             </div>
             <div class="fr full"><div class="fi"><label>Nom</label><input type="text" id="fnom" autocomplete="off" autocorrect="off" autocapitalize="words" spellcheck="false" placeholder="Ou saisir manuellement"></div></div>
             <div class="fr full"><div class="fi"><label>Adresse</label><textarea id="faddr" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Adresse..."></textarea></div></div>
           </div>
         </div>
         <div class="card">
-          <div class="ch t10">Transport - TVA 10%<button class="bn" style="font-size:11px;padding:6px 10px" onclick="addL('c');return false;">+ Course</button></div>
+          <div class="ch t10">Transport - TVA 10%<button class="bn" id="btn-course" style="font-size:11px;padding:6px 10px">+ Course</button></div>
           <div class="lh"><span>Designation</span><span>Nb</span><span>P.U. HT</span><span>Montant HT</span><span></span></div>
           <div id="lc"></div>
         </div>
         <div class="card">
-          <div class="ch t20">Peages - TVA 20%<button class="bn" style="font-size:11px;padding:6px 10px;background:var(--ac)" onclick="addL('p');return false;">+ Peage</button></div>
+          <div class="ch t20">Peages - TVA 20%<button class="bn" id="btn-peage" style="font-size:11px;padding:6px 10px;background:var(--ac)">+ Peage</button></div>
           <div class="lh"><span>Designation</span><span>Nb</span><span>P.U. HT</span><span>Montant HT</span><span></span></div>
           <div id="lp"></div>
         </div>
@@ -140,9 +140,9 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);font-famil
           <div class="net"><span class="nl">Net a payer TTC</span><span class="na" id="tttc">0,00 EUR</span></div>
         </div>
         <div class="acts">
-          <button class="ba sec" onclick="sauv('brouillon')">Sauvegarder</button>
-          <button class="ba acc" onclick="impr()">Apercu PDF</button>
-          <button class="ba pri" onclick="sauv('envoyee')">Envoyee</button>
+          <button class="ba sec" id="btn-sauv">Sauvegarder</button>
+          <button class="ba acc" id="btn-impr">Apercu PDF</button>
+          <button class="ba pri" id="btn-env">Envoyee</button>
         </div>
         <div style="padding:0 12px 8px;font-size:10px;color:var(--ink3);line-height:1.9">
           Reglement par virement bancaire ou CB<br>
@@ -150,13 +150,13 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);font-famil
           SAS FGS - 1409 Avenue du Brusc - 83140 Six-Fours-les-Plages
         </div>
         <div style="padding:0 12px 24px">
-          <button class="ba sec" style="width:100%;font-size:11px" onclick="ouvIban()">Modifier IBAN / BIC</button>
+          <button class="ba sec" id="btn-iban" style="width:100%;font-size:11px">Modifier IBAN / BIC</button>
         </div>
       </div>
     </div>
     <div id="tab-h" style="display:none"><div id="hl"><div class="empty">Aucune facture.</div></div></div>
     <div id="tab-c" style="display:none">
-      <div style="padding:12px"><button class="ba pri" style="width:100%" onclick="ouvMC()">+ Nouveau client</button></div>
+      <div style="padding:12px"><button class="ba pri" id="btn-newc" style="width:100%">+ Nouveau client</button></div>
       <div id="cl"></div>
     </div>
   </div>
@@ -169,7 +169,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);font-famil
     <p style="font-size:11px;color:var(--ink3);margin-bottom:16px">Stocke uniquement sur cet appareil.</p>
     <div class="mf"><label>IBAN</label><input type="text" id="ii" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="FR76 XXXX XXXX XXXX XXXX XXXX XXX"></div>
     <div class="mf"><label>BIC</label><input type="text" id="ib" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="ex: BNPAFRPP"></div>
-    <div class="mba"><button class="mc" onclick="fMB('mb-iban')">Annuler</button><button class="mo" onclick="sIban()">Enregistrer</button></div>
+    <div class="mba"><button class="mc" id="btn-iban-ann">Annuler</button><button class="mo" id="btn-iban-ok">Enregistrer</button></div>
   </div>
 </div>
 <div class="mb" id="mb-c">
@@ -181,18 +181,19 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);font-famil
     <div class="mf"><label>CP - Ville</label><input type="text" id="mcv" autocomplete="off" autocorrect="off"></div>
     <div class="mf"><label>Email</label><input type="email" id="mce" autocomplete="off" autocapitalize="off"></div>
     <div class="mf"><label>Tel</label><input type="tel" id="mct2"></div>
-    <div class="mba"><button class="mc" onclick="fMB('mb-c')">Annuler</button><button class="mo" onclick="sC()">Enregistrer</button></div>
+    <div class="mba"><button class="mc" id="btn-c-ann">Annuler</button><button class="mo" id="btn-c-ok">Enregistrer</button></div>
   </div>
 </div>
 <div class="mb" id="mb-conf">
   <div class="md">
     <h3 id="cft">Confirmer</h3>
     <p id="cfm" style="color:var(--ink3);font-size:14px;margin-bottom:8px"></p>
-    <div class="mba"><button class="mc" onclick="fMB('mb-conf')">Annuler</button><button id="cfb" class="mo">OK</button></div>
+    <div class="mba"><button class="mc" id="btn-conf-ann">Annuler</button><button id="cfb" class="mo">OK</button></div>
   </div>
 </div>
 <script>
-var DK='fgs_w1',lid=100,C=[],P=[];
+(function(){
+var DK='fgs_x1',lid=100,C=[],P=[];
 function pn(v){return parseFloat(String(v).replace(',','.'))||0;}
 function fm(n){return n.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2})+' EUR';}
 function td(){return new Date().toISOString().split('T')[0];}
@@ -200,8 +201,10 @@ function td30(){var d=new Date();d.setDate(d.getDate()+30);return d.toISOString(
 function fd(s){if(!s)return '';try{return new Date(s+'T12:00').toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'});}catch(e){return s;}}
 function nn(){var n=(DB.lastNum||0)+1;return 'FAC-'+new Date().getFullYear()+'-'+String(n).padStart(3,'0');}
 function eh(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function gv(id){return document.getElementById(id).value;}
+function sv(id,v){document.getElementById(id).value=v;}
 function ldb(){
-  var keys=['fgs_w1','fgs_v4','fgs_v5','fgs_v3'];
+  var keys=['fgs_x1','fgs_w1','fgs_v4','fgs_v5'];
   for(var i=0;i<keys.length;i++){
     try{var d=localStorage.getItem(keys[i]);if(d){var p=JSON.parse(d);if(p&&((p.clients&&p.clients.length)||(p.factures&&p.factures.length))){localStorage.setItem(DK,JSON.stringify(p));return p;}}}catch(e){}
   }
@@ -214,44 +217,189 @@ var DB=ldb()||{iban:'',bic:'',clients:[
   {id:3,nom:'Aeroport Marseille-Provence',adresse:'BP 7, Aeroport',ville:'13727 Marignane',email:'',tel:''}
 ],factures:[],lastNum:0,draft:null};
 if(!DB.iban)DB.iban='';if(!DB.bic)DB.bic='';
-function gv(id){return document.getElementById(id).value;}
-window.onload=function(){
-  if(DB.draft){rD(DB.draft);}
-  else{document.getElementById('fnum').value=nn();document.getElementById('hn').textContent=gv('fnum');document.getElementById('fdate').value=td();document.getElementById('fech').value=td30();addL('c');addL('c');}
-  rSel();rCl();rH();updIban();
-  setInterval(function(){DB.draft=gD();sdb();},15000);
-};
-function updIban(){var el=document.getElementById('fiban');if(el)el.textContent=DB.iban?'IBAN : '+DB.iban:'IBAN : non renseigne';}
-function ouvIban(){document.getElementById('ii').value=DB.iban;document.getElementById('ib').value=DB.bic;document.getElementById('mb-iban').classList.add('open');}
-function sIban(){DB.iban=gv('ii').trim();DB.bic=gv('ib').trim();sdb();updIban();fMB('mb-iban');toast('IBAN sauvegarde !');}
-function goTab(n,el){
-  ['f','h','c'].forEach(function(t){document.getElementById('tab-'+t).style.display=t===n?'block':'none';});
-  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on');});
-  el.classList.add('on');
+
+// NAV via buttons
+function goTab(name){
+[‘f’,‘h’,‘c’].forEach(function(k){
+var names={f:‘facture’,h:‘historique’,c:‘clients’};
+document.getElementById(‘tab-’+k).style.display=names[k]===name?‘block’:‘none’;
+var el=document.getElementById(‘t-’+k);
+if(el){if(names[k]===name)el.classList.add(‘on’);else el.classList.remove(‘on’);}
+});
 }
-function gD(){return{num:gv('fnum'),date:gv('fdate'),ech:gv('fech'),nom:gv('fnom'),addr:gv('faddr'),C:C.map(function(l){return{id:l.id,desig:l.desig,nb:l.nb,pu:l.pu};}),P:P.map(function(l){return{id:l.id,desig:l.desig,nb:l.nb,pu:l.pu};})};}
-function rD(d){document.getElementById('fnum').value=d.num||nn();document.getElementById('hn').textContent=gv('fnum');document.getElementById('fdate').value=d.date||td();document.getElementById('fech').value=d.ech||td30();document.getElementById('fnom').value=d.nom||'';document.getElementById('faddr').value=d.addr||'';C=[];P=[];(d.C||[]).forEach(function(l){C.push(l);lid=Math.max(lid,l.id+1);});(d.P||[]).forEach(function(l){P.push(l);lid=Math.max(lid,l.id+1);});if(!C.length)addL('c');else rA();}
-function addL(t){var l={id:lid++,desig:'',nb:'1',pu:''};if(t==='c')C.push(l);else P.push(l);rA();}
-function delL(id,t){if(t==='c')C=C.filter(function(l){return l.id!==id;});else P=P.filter(function(l){return l.id!==id;});rA();}
-function upd(id,t,f,val){var a=t==='c'?C:P;var l=a.find(function(x){return x.id===id;});if(l){l[f]=val;rc();}}
-function rA(){rG('lc',C,'c');rG('lp',P,'p');rc();}
-function rG(cid,lines,t){var ph=t==='c'?'Prise en charge le...':'Peage...';var el=document.getElementById(cid);el.innerHTML='';lines.forEach(function(l){var mt=pn(l.nb)*pn(l.pu);var div=document.createElement('div');div.className='lg';div.innerHTML='<textarea autocomplete="off" autocorrect="off" spellcheck="false" placeholder="'+ph+'" oninput="upd('+l.id+',\''+t+'\',\'desig\',this.value)">'+eh(l.desig||'')+'</textarea>'+'<input type="text" inputmode="numeric" value="'+eh(String(l.nb||1))+'" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" oninput="upd('+l.id+',\''+t+'\',\'nb\',this.value)">'+'<input type="text" inputmode="decimal" class="r" value="'+eh(String(l.pu||''))+'" placeholder="0,00" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" oninput="upd('+l.id+',\''+t+'\',\'pu\',this.value)">'+'<div class="lmt" id="mt'+l.id+'">'+(mt>0?fm(mt):'-')+'</div>'+'<button class="x" onclick="delL('+l.id+',\''+t+'\')">x</button>';el.appendChild(div);});}
-function rc(){C.forEach(function(l){var el=document.getElementById('mt'+l.id);if(el){var mt=pn(l.nb)*pn(l.pu);el.textContent=mt>0?fm(mt):'-';}});P.forEach(function(l){var el=document.getElementById('mt'+l.id);if(el){var mt=pn(l.nb)*pn(l.pu);el.textContent=mt>0?fm(mt):'-';}});var htC=C.reduce(function(a,l){return a+pn(l.nb)*pn(l.pu);},0);var htP=P.reduce(function(a,l){return a+pn(l.nb)*pn(l.pu);},0);var tv10=htC*0.10,tv20=htP*0.20,ht=htC+htP,tva=tv10+tv20,ttc=ht+tva;document.getElementById('thtc').textContent=fm(htC);document.getElementById('ttva10').textContent=fm(tv10);document.getElementById('thtp').textContent=fm(htP);document.getElementById('ttva20').textContent=fm(tv20);document.getElementById('tht').textContent=fm(ht);document.getElementById('ttva').textContent=fm(tva);document.getElementById('tttc').textContent=fm(ttc);}
-function rSel(){var s=document.getElementById('fsel');s.innerHTML='<option value="">-- Choisir --</option>';DB.clients.forEach(function(c){var o=document.createElement('option');o.value=c.id;o.textContent=c.nom;s.appendChild(o);});}
-function selC(id){var c=DB.clients.find(function(x){return x.id==id;});if(!c)return;document.getElementById('fnom').value=c.nom;document.getElementById('faddr').value=[c.adresse,c.ville].filter(Boolean).join('\n');}
-function rCl(){var el=document.getElementById('cl');if(!DB.clients.length){el.innerHTML='<div class="empty">Aucun client.</div>';return;}el.innerHTML=DB.clients.map(function(c){return '<div class="cc"><div style="font-weight:700;font-size:14px;margin-bottom:4px">'+eh(c.nom)+'</div><div style="font-size:12px;color:var(--ink3);line-height:1.7">'+eh((c.adresse||'')+' '+(c.ville||''))+'</div><div style="display:flex;gap:8px;margin-top:10px"><button class="bsm" onclick="edC('+c.id+')">Modifier</button><button class="bsm dg" onclick="supC('+c.id+')">Supprimer</button></div></div>';}).join('');}
-function ouvMC(c){document.getElementById('mct').textContent=c?'Modifier':'Nouveau client';document.getElementById('mcid').value=c?c.id:'';document.getElementById('mcn').value=c?c.nom:'';document.getElementById('mca').value=c?c.adresse:'';document.getElementById('mcv').value=c?c.ville:'';document.getElementById('mce').value=c?c.email:'';document.getElementById('mct2').value=c?c.tel:'';document.getElementById('mb-c').classList.add('open');}
-function edC(id){ouvMC(DB.clients.find(function(c){return c.id===id;}));}
-function sC(){var nom=document.getElementById('mcn').value.trim();if(!nom){toast('Nom obligatoire');return;}var id=parseInt(gv('mcid'))||null;var data={nom:nom,adresse:gv('mca'),ville:gv('mcv'),email:gv('mce'),tel:gv('mct2')};if(id){var i=DB.clients.findIndex(function(c){return c.id===id;});if(i>=0)DB.clients[i]=Object.assign({},DB.clients[i],data);}else{var nid=Math.max.apply(null,[0].concat(DB.clients.map(function(c){return c.id;})))+1;DB.clients.push(Object.assign({id:nid},data));}sdb();fMB('mb-c');rCl();rSel();toast('Client enregistre !');}
-function supC(id){var c=DB.clients.find(function(x){return x.id===id;});document.getElementById('cft').textContent='Supprimer ?';document.getElementById('cfm').textContent=c?c.nom:'';document.getElementById('cfb').className='md2';document.getElementById('cfb').textContent='Supprimer';document.getElementById('cfb').onclick=function(){DB.clients=DB.clients.filter(function(x){return x.id!==id;});sdb();rCl();rSel();fMB('mb-conf');toast('Supprime');};document.getElementById('mb-conf').classList.add('open');}
-function sauv(st){var num=gv('fnum'),nom=gv('fnom')||'-',date=gv('fdate');var htC=C.reduce(function(a,l){return a+pn(l.nb)*pn(l.pu);},0);var htP=P.reduce(function(a,l){return a+pn(l.nb)*pn(l.pu);},0);var ttc=htC+htP+htC*0.10+htP*0.20;DB.factures=[{num:num,client:nom,date:date,ttc:fm(ttc),statut:st}].concat(DB.factures.filter(function(f){return f.num!==num;}));var n=parseInt(num.split('-').pop())||0;if(n>DB.lastNum)DB.lastNum=n;DB.draft=gD();sdb();rH();toast(st==='envoyee'?'Envoyee !':'Sauvegardee !');}
-function nouv(){document.getElementById('cft').textContent='Nouvelle facture ?';document.getElementById('cfm').textContent='La facture actuelle sera sauvegardee.';document.getElementById('cfb').className='mo';document.getElementById('cfb').textContent='Continuer';document.getElementById('cfb').onclick=function(){DB.draft=gD();sdb();C=[];P=[];var num=nn();document.getElementById('fnum').value=num;document.getElementById('hn').textContent=num;document.getElementById('fdate').value=td();document.getElementById('fech').value=td30();document.getElementById('fnom').value='';document.getElementById('faddr').value='';document.getElementById('fsel').value='';DB.draft=null;addL('c');addL('c');fMB('mb-conf');goTab('f',document.querySelector('.tab'));};document.getElementById('mb-conf').classList.add('open');}
-function rH(){var el=document.getElementById('hl');if(!DB.factures.length){el.innerHTML='<div class="empty">Aucune facture.</div>';return;}el.innerHTML=DB.factures.map(function(f){return '<div class="hi"><div><div style="font-weight:700;font-size:13px">'+eh(f.num)+'<span class="bk '+(f.statut==='envoyee'?'e':'b')+'">'+(f.statut==='envoyee'?'Envoyee':'Brouillon')+'</span></div><div style="font-size:12px;color:var(--ink3);margin-top:2px">'+eh(f.client)+'</div></div><div style="text-align:right"><div style="font-weight:700">'+f.ttc+'</div><div style="font-size:11px;color:var(--ink3);margin-top:2px">'+fd(f.date)+'</div></div></div>';}).join('');}
-function impr(){var num=gv('fnum'),date=fd(gv('fdate')),ech=fd(gv('fech')),nom=gv('fnom'),addr=gv('faddr').replace(/\n/g,'<br>');var htC=C.reduce(function(a,l){return a+pn(l.nb)*pn(l.pu);},0);var htP=P.reduce(function(a,l){return a+pn(l.nb)*pn(l.pu);},0);var tv10=htC*0.10,tv20=htP*0.20,ht=htC+htP,tva=tv10+tv20,ttc=ht+tva;function row(l){var mt=pn(l.nb)*pn(l.pu);return '<tr><td style="padding:6px 8px;border-bottom:1px solid #eee;font-size:10px;vertical-align:top">'+eh(l.desig||'')+'</td><td style="padding:6px 8px;border-bottom:1px solid #eee;text-align:center;font-size:10px">'+eh(String(l.nb||''))+'</td><td style="padding:6px 8px;border-bottom:1px solid #eee;text-align:right;font-size:10px">'+(l.pu?fm(pn(l.pu)):'')+'</td><td style="padding:6px 8px;border-bottom:1px solid #eee;text-align:right;font-size:10px;font-weight:700">'+(mt>0?fm(mt):'-')+'</td></tr>';}
-document.getElementById('pz').innerHTML='<div style="font-family:Arial,sans-serif;color:#1a1a1a;max-width:100%;margin:0"><div style="display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:14px;border-bottom:2px solid #1a1a1a;margin-bottom:16px"><div><div style="font-family:Georgia,serif;font-size:26px;color:#6b9be8">TAXI</div><div style="font-size:10px;color:#666;line-height:1.8;margin-top:6px"><strong style="font-size:13px;color:#1a1a1a;display:block">SAS FGS</strong>1409 Avenue du Brusc - 83140 Six-Fours-les-Plages<br>Tel : 06 10 62 05 60 - TOULON N51<br>SIRET : 991 137 068 00011 - TVA : FR 85991137068<br>fgs.taxi@yahoo.com</div></div><div style="text-align:right"><div style="font-family:Georgia,serif;font-size:24px;color:#c55a11">Facture</div><div style="font-size:11px;color:#444;margin-top:4px">N '+eh(num)+'</div><div style="font-size:10px;color:#888;margin-top:3px">'+date+'</div></div></div><div style="display:flex;justify-content:space-between;margin-bottom:16px;font-size:10px;line-height:2"><div><strong style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#888;display:block">Facture a</strong>'+eh(nom)+'<br>'+addr+'</div><div style="text-align:right"><strong style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#888;display:block">Echeance</strong>'+ech+'</div></div><table style="width:100%;border-collapse:collapse"><thead><tr><th style="padding:7px 8px;font-size:9px;text-transform:uppercase;font-weight:700;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;text-align:left">Designation</th><th style="padding:7px 8px;font-size:9px;text-transform:uppercase;font-weight:700;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;text-align:center">Nb</th><th style="padding:7px 8px;font-size:9px;text-transform:uppercase;font-weight:700;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;text-align:right">P.U. HT</th><th style="padding:7px 8px;font-size:9px;text-transform:uppercase;font-weight:700;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;text-align:right">Montant HT</th></tr></thead><tbody><tr><td colspan="4" style="background:#eaf4fb;color:#2c7ab5;font-size:9px;font-weight:700;text-transform:uppercase;padding:4px 8px">Transport - TVA 10%</td></tr>'+C.map(row).join('')+(P.length?'<tr><td colspan="4" style="background:#fff8f0;color:#c55a11;font-size:9px;font-weight:700;text-transform:uppercase;padding:4px 8px">Peages - TVA 20%</td></tr>'+P.map(row).join(''):())+'</tbody></table><div style="display:flex;justify-content:flex-end;margin-top:16px"><table style="border-collapse:collapse"><tr><td style="padding:3px 16px 3px 0;font-size:10px;color:#888">Total HT courses</td><td style="padding:3px 0;font-size:10px;text-align:right;font-weight:500">'+fm(htC)+'</td></tr><tr><td style="padding:3px 16px 3px 0;font-size:10px;color:#888">TVA 10%</td><td style="padding:3px 0;font-size:10px;text-align:right;font-weight:500">'+fm(tv10)+'</td></tr>'+(P.length?'<tr><td style="padding:3px 16px 3px 0;font-size:10px;color:#888">Total HT peages</td><td style="padding:3px 0;font-size:10px;text-align:right;font-weight:500">'+fm(htP)+'</td></tr><tr><td style="padding:3px 16px 3px 0;font-size:10px;color:#888">TVA 20%</td><td style="padding:3px 0;font-size:10px;text-align:right;font-weight:500">'+fm(tv20)+'</td></tr>':())+'<tr><td style="padding:6px 16px 3px 0;font-size:10px;color:#888;border-top:1px solid #ddd">Sous-total HT</td><td style="padding:6px 0 3px;font-size:10px;text-align:right;font-weight:500;border-top:1px solid #ddd">'+fm(ht)+'</td></tr><tr><td style="padding:3px 16px 3px 0;font-size:10px;color:#888">Total TVA</td><td style="padding:3px 0;font-size:10px;text-align:right;font-weight:500">'+fm(tva)+'</td></tr></table></div><div style="display:flex;justify-content:flex-end;margin-top:8px"><div style="background:#1a1a1a;color:#fff;display:flex"><div style="padding:10px 16px;font-size:10px;font-weight:700;text-transform:uppercase;border-right:1px solid rgba(255,255,255,.2)">Net a payer TTC</div><div style="padding:10px 16px;font-size:18px;font-weight:700;font-family:Georgia,serif;min-width:110px;text-align:right">'+fm(ttc)+'</div></div></div><div style="margin-top:16px;padding-top:10px;border-top:1px solid #eee;font-size:9px;color:#888;line-height:1.8">Reglement par virement bancaire ou CB'+(DB.iban?' - IBAN : '+eh(DB.iban):'')+' - SAS FGS - Facture '+eh(num)+'</div></div>';
-window.print();}
-function fMB(id){document.getElementById(id).classList.remove('open');}
-function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('on');setTimeout(function(){t.classList.remove('on');},3000);}
+document.getElementById(‘t-f’).addEventListener(‘click’,function(){goTab(‘facture’);});
+document.getElementById(‘t-h’).addEventListener(‘click’,function(){goTab(‘historique’);});
+document.getElementById(‘t-c’).addEventListener(‘click’,function(){goTab(‘clients’);});
+
+// BUTTONS - all via addEventListener, no inline onclick
+document.getElementById(‘btn-nouv’).addEventListener(‘click’,nouv);
+document.getElementById(‘btn-course’).addEventListener(‘click’,function(){addL(‘c’);});
+document.getElementById(‘btn-peage’).addEventListener(‘click’,function(){addL(‘p’);});
+document.getElementById(‘btn-sauv’).addEventListener(‘click’,function(){sauv(‘brouillon’);});
+document.getElementById(‘btn-env’).addEventListener(‘click’,function(){sauv(‘envoyee’);});
+document.getElementById(‘btn-impr’).addEventListener(‘click’,impr);
+document.getElementById(‘btn-iban’).addEventListener(‘click’,function(){sv(‘ii’,DB.iban);sv(‘ib’,DB.bic);ouvMB(‘mb-iban’);});
+document.getElementById(‘btn-iban-ann’).addEventListener(‘click’,function(){fMB(‘mb-iban’);});
+document.getElementById(‘btn-iban-ok’).addEventListener(‘click’,sIban);
+document.getElementById(‘btn-newc’).addEventListener(‘click’,function(){ouvMC(null);});
+document.getElementById(‘btn-c-ann’).addEventListener(‘click’,function(){fMB(‘mb-c’);});
+document.getElementById(‘btn-c-ok’).addEventListener(‘click’,sC);
+document.getElementById(‘btn-conf-ann’).addEventListener(‘click’,function(){fMB(‘mb-conf’);});
+document.getElementById(‘fnum’).addEventListener(‘input’,function(){document.getElementById(‘hn’).textContent=this.value;});
+document.getElementById(‘fsel’).addEventListener(‘change’,function(){selC(this.value);});
+
+function init(){
+if(DB.draft){rD(DB.draft);}
+else{sv(‘fnum’,nn());document.getElementById(‘hn’).textContent=gv(‘fnum’);sv(‘fdate’,td());sv(‘fech’,td30());addL(‘c’);addL(‘c’);}
+rSel();rCl();rH();updIban();
+setInterval(function(){DB.draft=gD();sdb();},15000);
+goTab(‘facture’);
+}
+
+function updIban(){var el=document.getElementById(‘fiban’);if(el)el.textContent=DB.iban?’IBAN : ’+DB.iban:‘IBAN : non renseigne’;}
+function sIban(){DB.iban=gv(‘ii’).trim();DB.bic=gv(‘ib’).trim();sdb();updIban();fMB(‘mb-iban’);toast(‘IBAN sauvegarde !’);}
+function ouvMB(id){document.getElementById(id).classList.add(‘open’);}
+function fMB(id){document.getElementById(id).classList.remove(‘open’);}
+
+function gD(){return{num:gv(‘fnum’),date:gv(‘fdate’),ech:gv(‘fech’),nom:gv(‘fnom’),addr:gv(‘faddr’),C:C.map(function(l){return{id:l.id,desig:l.desig,nb:l.nb,pu:l.pu};}),P:P.map(function(l){return{id:l.id,desig:l.desig,nb:l.nb,pu:l.pu};})};}
+function rD(d){sv(‘fnum’,d.num||nn());document.getElementById(‘hn’).textContent=gv(‘fnum’);sv(‘fdate’,d.date||td());sv(‘fech’,d.ech||td30());sv(‘fnom’,d.nom||’’);sv(‘faddr’,d.addr||’’);C=[];P=[];(d.C||[]).forEach(function(l){C.push(l);lid=Math.max(lid,l.id+1);});(d.P||[]).forEach(function(l){P.push(l);lid=Math.max(lid,l.id+1);});if(!C.length)addL(‘c’);else rA();}
+function addL(t){var l={id:lid++,desig:’’,nb:‘1’,pu:’’};if(t===‘c’)C.push(l);else P.push(l);rA();}
+function delL(id,t){if(t===‘c’)C=C.filter(function(l){return l.id!==id;});else P=P.filter(function(l){return l.id!==id;});rA();}
+function upd(id,t,f,val){var a=t===‘c’?C:P;var l=a.find(function(x){return x.id===id;});if(l){l[f]=val;rc();}}
+function rA(){rG(‘lc’,C,‘c’);rG(‘lp’,P,‘p’);rc();}
+function rG(cid,lines,t){
+var ph=t===‘c’?‘Prise en charge le…’:‘Peage…’;
+var el=document.getElementById(cid);
+el.innerHTML=’’;
+lines.forEach(function(l){
+var mt=pn(l.nb)*pn(l.pu);
+var div=document.createElement(‘div’);
+div.className=‘lg’;
+var ta=document.createElement(‘textarea’);
+ta.autocomplete=‘off’;ta.autocorrect=‘off’;ta.spellcheck=false;
+ta.placeholder=ph;ta.value=l.desig||’’;
+ta.addEventListener(‘input’,function(){upd(l.id,t,‘desig’,this.value);});
+var nb=document.createElement(‘input’);
+nb.type=‘text’;nb.inputMode=‘numeric’;nb.value=l.nb||1;
+nb.autocomplete=‘off’;nb.autocorrect=‘off’;nb.autocapitalize=‘off’;nb.spellcheck=false;
+nb.addEventListener(‘input’,function(){upd(l.id,t,‘nb’,this.value);});
+var pu=document.createElement(‘input’);
+pu.type=‘text’;pu.inputMode=‘decimal’;pu.className=‘r’;pu.value=l.pu||’’;
+pu.placeholder=‘0,00’;pu.autocomplete=‘off’;pu.autocorrect=‘off’;pu.autocapitalize=‘off’;pu.spellcheck=false;
+pu.addEventListener(‘input’,function(){upd(l.id,t,‘pu’,this.value);});
+var mtd=document.createElement(‘div’);
+mtd.className=‘lmt’;mtd.id=‘mt’+l.id;
+mtd.textContent=mt>0?fm(mt):’-’;
+var xb=document.createElement(‘button’);
+xb.className=‘xb’;xb.textContent=‘x’;
+xb.addEventListener(‘click’,function(){delL(l.id,t);});
+div.appendChild(ta);div.appendChild(nb);div.appendChild(pu);div.appendChild(mtd);div.appendChild(xb);
+el.appendChild(div);
+});
+}
+function rc(){
+C.forEach(function(l){var el=document.getElementById(‘mt’+l.id);if(el){var mt=pn(l.nb)*pn(l.pu);el.textContent=mt>0?fm(mt):’-’;}});
+P.forEach(function(l){var el=document.getElementById(‘mt’+l.id);if(el){var mt=pn(l.nb)*pn(l.pu);el.textContent=mt>0?fm(mt):’-’;}});
+var htC=C.reduce(function(a,l){return a+pn(l.nb)*pn(l.pu);},0);
+var htP=P.reduce(function(a,l){return a+pn(l.nb)*pn(l.pu);},0);
+var tv10=htC*0.10,tv20=htP*0.20,ht=htC+htP,tva=tv10+tv20,ttc=ht+tva;
+document.getElementById(‘thtc’).textContent=fm(htC);
+document.getElementById(‘ttva10’).textContent=fm(tv10);
+document.getElementById(‘thtp’).textContent=fm(htP);
+document.getElementById(‘ttva20’).textContent=fm(tv20);
+document.getElementById(‘tht’).textContent=fm(ht);
+document.getElementById(‘ttva’).textContent=fm(tva);
+document.getElementById(‘tttc’).textContent=fm(ttc);
+}
+function rSel(){var s=document.getElementById(‘fsel’);s.innerHTML=’<option value="">– Choisir –</option>’;DB.clients.forEach(function(c){var o=document.createElement(‘option’);o.value=c.id;o.textContent=c.nom;s.appendChild(o);});}
+function selC(id){var c=DB.clients.find(function(x){return x.id==id;});if(!c)return;sv(‘fnom’,c.nom);sv(‘faddr’,[c.adresse,c.ville].filter(Boolean).join(’\n’));}
+function rCl(){
+var el=document.getElementById(‘cl’);
+if(!DB.clients.length){el.innerHTML=’<div class="empty">Aucun client.</div>’;return;}
+el.innerHTML=’’;
+DB.clients.forEach(function(c){
+var div=document.createElement(‘div’);div.className=‘cc’;
+div.innerHTML=’<div style="font-weight:700;font-size:14px;margin-bottom:4px">’+eh(c.nom)+’</div>’+
+‘<div style="font-size:12px;color:var(--ink3);line-height:1.7">’+eh((c.adresse||’’)+’ ‘+(c.ville||’’))+’</div>’;
+var acts=document.createElement(‘div’);acts.style.cssText=‘display:flex;gap:8px;margin-top:10px’;
+var bmod=document.createElement(‘button’);bmod.className=‘bsm’;bmod.textContent=‘Modifier’;
+bmod.addEventListener(‘click’,function(){ouvMC(c);});
+var bdel=document.createElement(‘button’);bdel.className=‘bsm dg’;bdel.textContent=‘Supprimer’;
+bdel.addEventListener(‘click’,function(){supC(c.id);});
+acts.appendChild(bmod);acts.appendChild(bdel);div.appendChild(acts);
+el.appendChild(div);
+});
+}
+function ouvMC(c){
+document.getElementById(‘mct’).textContent=c?‘Modifier’:‘Nouveau client’;
+sv(‘mcid’,c?c.id:’’);sv(‘mcn’,c?c.nom:’’);sv(‘mca’,c?c.adresse:’’);
+sv(‘mcv’,c?c.ville:’’);sv(‘mce’,c?c.email:’’);sv(‘mct2’,c?c.tel:’’);
+ouvMB(‘mb-c’);
+}
+function sC(){
+var nom=gv(‘mcn’).trim();if(!nom){toast(‘Nom obligatoire’);return;}
+var id=parseInt(gv(‘mcid’))||null;
+var data={nom:nom,adresse:gv(‘mca’),ville:gv(‘mcv’),email:gv(‘mce’),tel:gv(‘mct2’)};
+if(id){var i=DB.clients.findIndex(function(c){return c.id===id;});if(i>=0)DB.clients[i]=Object.assign({},DB.clients[i],data);}
+else{var nid=Math.max.apply(null,[0].concat(DB.clients.map(function(c){return c.id;})))+1;DB.clients.push(Object.assign({id:nid},data));}
+sdb();fMB(‘mb-c’);rCl();rSel();toast(‘Client enregistre !’);
+}
+function supC(id){
+var c=DB.clients.find(function(x){return x.id===id;});
+document.getElementById(‘cft’).textContent=‘Supprimer ?’;
+document.getElementById(‘cfm’).textContent=c?c.nom:’’;
+var cfb=document.getElementById(‘cfb’);cfb.className=‘md2’;cfb.textContent=‘Supprimer’;
+cfb.onclick=function(){DB.clients=DB.clients.filter(function(x){return x.id!==id;});sdb();rCl();rSel();fMB(‘mb-conf’);toast(‘Supprime’);};
+ouvMB(‘mb-conf’);
+}
+function sauv(st){
+var num=gv(‘fnum’),nom=gv(‘fnom’)||’-’,date=gv(‘fdate’);
+var htC=C.reduce(function(a,l){return a+pn(l.nb)*pn(l.pu);},0);
+var htP=P.reduce(function(a,l){return a+pn(l.nb)*pn(l.pu);},0);
+var ttc=htC+htP+htC*0.10+htP*0.20;
+DB.factures=[{num:num,client:nom,date:date,ttc:fm(ttc),statut:st}].concat(DB.factures.filter(function(f){return f.num!==num;}));
+var n=parseInt(num.split(’-’).pop())||0;if(n>DB.lastNum)DB.lastNum=n;
+DB.draft=gD();sdb();rH();toast(st===‘envoyee’?‘Envoyee !’:‘Sauvegardee !’);
+}
+function nouv(){
+document.getElementById(‘cft’).textContent=‘Nouvelle facture ?’;
+document.getElementById(‘cfm’).textContent=‘La facture actuelle sera sauvegardee.’;
+var cfb=document.getElementById(‘cfb’);cfb.className=‘mo’;cfb.textContent=‘Continuer’;
+cfb.onclick=function(){
+DB.draft=gD();sdb();C=[];P=[];
+var num=nn();sv(‘fnum’,num);document.getElementById(‘hn’).textContent=num;
+sv(‘fdate’,td());sv(‘fech’,td30());sv(‘fnom’,’’);sv(‘faddr’,’’);
+document.getElementById(‘fsel’).value=’’;
+DB.draft=null;addL(‘c’);addL(‘c’);fMB(‘mb-conf’);
+goTab(‘facture’);
+};
+ouvMB(‘mb-conf’);
+}
+function rH(){
+var el=document.getElementById(‘hl’);
+if(!DB.factures.length){el.innerHTML=’<div class="empty">Aucune facture.</div>’;return;}
+el.innerHTML=’’;
+DB.factures.forEach(function(f){
+var div=document.createElement(‘div’);div.className=‘hi’;
+div.innerHTML=’<div><div style="font-weight:700;font-size:13px">’+eh(f.num)+’<span class="bk '+(f.statut==='envoyee'?'e':'b')+'">’+(f.statut===‘envoyee’?‘Envoyee’:‘Brouillon’)+’</span></div><div style="font-size:12px;color:var(--ink3);margin-top:2px">’+eh(f.client)+’</div></div><div style="text-align:right"><div style="font-weight:700">’+f.ttc+’</div><div style="font-size:11px;color:var(--ink3);margin-top:2px">’+fd(f.date)+’</div></div>’;
+el.appendChild(div);
+});
+}
+function impr(){
+var num=gv(‘fnum’),date=fd(gv(‘fdate’)),ech=fd(gv(‘fech’)),nom=gv(‘fnom’),addr=gv(‘faddr’).replace(/\n/g,’<br>’);
+var htC=C.reduce(function(a,l){return a+pn(l.nb)*pn(l.pu);},0);
+var htP=P.reduce(function(a,l){return a+pn(l.nb)*pn(l.pu);},0);
+var tv10=htC*0.10,tv20=htP*0.20,ht=htC+htP,tva=tv10+tv20,ttc=ht+tva;
+function row(l){var mt=pn(l.nb)*pn(l.pu);return ‘<tr><td style="padding:6px 8px;border-bottom:1px solid #eee;font-size:10px;vertical-align:top">’+eh(l.desig||’’)+’</td><td style="padding:6px 8px;border-bottom:1px solid #eee;text-align:center;font-size:10px">’+eh(String(l.nb||’’))+’</td><td style="padding:6px 8px;border-bottom:1px solid #eee;text-align:right;font-size:10px">’+(l.pu?fm(pn(l.pu)):’’)+’</td><td style="padding:6px 8px;border-bottom:1px solid #eee;text-align:right;font-size:10px;font-weight:700">’+(mt>0?fm(mt):’-’)+’</td></tr>’;}
+document.getElementById(‘pz’).innerHTML=’<div style="font-family:Arial,sans-serif;color:#1a1a1a;max-width:100%;margin:0"><div style="display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:14px;border-bottom:2px solid #1a1a1a;margin-bottom:16px"><div><div style="font-family:Georgia,serif;font-size:26px;color:#6b9be8">TAXI</div><div style="font-size:10px;color:#666;line-height:1.8;margin-top:6px"><strong style="font-size:13px;color:#1a1a1a;display:block">SAS FGS</strong>1409 Avenue du Brusc - 83140 Six-Fours-les-Plages<br>Tel : 06 10 62 05 60 - TOULON N51<br>SIRET : 991 137 068 00011 - TVA : FR 85991137068<br>fgs.taxi@yahoo.com</div></div><div style="text-align:right"><div style="font-family:Georgia,serif;font-size:24px;color:#c55a11">Facture</div><div style="font-size:11px;color:#444;margin-top:4px">N ‘+eh(num)+’</div><div style="font-size:10px;color:#888;margin-top:3px">’+date+’</div></div></div><div style="display:flex;justify-content:space-between;margin-bottom:16px;font-size:10px;line-height:2"><div><strong style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#888;display:block">Facture a</strong>’+eh(nom)+’<br>’+addr+’</div><div style="text-align:right"><strong style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#888;display:block">Echeance</strong>’+ech+’</div></div><table style="width:100%;border-collapse:collapse"><thead><tr><th style="padding:7px 8px;font-size:9px;text-transform:uppercase;font-weight:700;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;text-align:left">Designation</th><th style="padding:7px 8px;font-size:9px;text-transform:uppercase;font-weight:700;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;text-align:center">Nb</th><th style="padding:7px 8px;font-size:9px;text-transform:uppercase;font-weight:700;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;text-align:right">P.U. HT</th><th style="padding:7px 8px;font-size:9px;text-transform:uppercase;font-weight:700;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;text-align:right">Montant HT</th></tr></thead><tbody><tr><td colspan="4" style="background:#eaf4fb;color:#2c7ab5;font-size:9px;font-weight:700;text-transform:uppercase;padding:4px 8px">Transport - TVA 10%</td></tr>’+C.map(row).join(’’)+(P.length?’<tr><td colspan="4" style="background:#fff8f0;color:#c55a11;font-size:9px;font-weight:700;text-transform:uppercase;padding:4px 8px">Peages - TVA 20%</td></tr>’+P.map(row).join(’’):’’)+’</tbody></table><div style="display:flex;justify-content:flex-end;margin-top:16px"><table style="border-collapse:collapse"><tr><td style="padding:3px 16px 3px 0;font-size:10px;color:#888">Total HT courses</td><td style="padding:3px 0;font-size:10px;text-align:right;font-weight:500">’+fm(htC)+’</td></tr><tr><td style="padding:3px 16px 3px 0;font-size:10px;color:#888">TVA 10%</td><td style="padding:3px 0;font-size:10px;text-align:right;font-weight:500">’+fm(tv10)+’</td></tr>’+(P.length?’<tr><td style="padding:3px 16px 3px 0;font-size:10px;color:#888">Total HT peages</td><td style="padding:3px 0;font-size:10px;text-align:right;font-weight:500">’+fm(htP)+’</td></tr><tr><td style="padding:3px 16px 3px 0;font-size:10px;color:#888">TVA 20%</td><td style="padding:3px 0;font-size:10px;text-align:right;font-weight:500">’+fm(tv20)+’</td></tr>’:’’)+’<tr><td style="padding:6px 16px 3px 0;font-size:10px;color:#888;border-top:1px solid #ddd">Sous-total HT</td><td style="padding:6px 0 3px;font-size:10px;text-align:right;font-weight:500;border-top:1px solid #ddd">’+fm(ht)+’</td></tr><tr><td style="padding:3px 16px 3px 0;font-size:10px;color:#888">Total TVA</td><td style="padding:3px 0;font-size:10px;text-align:right;font-weight:500">’+fm(tva)+’</td></tr></table></div><div style="display:flex;justify-content:flex-end;margin-top:8px"><div style="background:#1a1a1a;color:#fff;display:flex"><div style="padding:10px 16px;font-size:10px;font-weight:700;text-transform:uppercase;border-right:1px solid rgba(255,255,255,.2)">Net a payer TTC</div><div style="padding:10px 16px;font-size:18px;font-weight:700;font-family:Georgia,serif;min-width:110px;text-align:right">’+fm(ttc)+’</div></div></div><div style="margin-top:16px;padding-top:10px;border-top:1px solid #eee;font-size:9px;color:#888;line-height:1.8">Reglement par virement bancaire ou CB’+(DB.iban?’ - IBAN : ‘+eh(DB.iban):’’)+’ - SAS FGS - Facture ‘+eh(num)+’</div></div>’;
+window.print();
+}
+function toast(msg){var t=document.getElementById(‘toast’);t.textContent=msg;t.classList.add(‘on’);setTimeout(function(){t.classList.remove(‘on’);},3000);}
+
+// INIT
+if(document.readyState===‘loading’){document.addEventListener(‘DOMContentLoaded’,init);}else{init();}
+})();
 </script>
+
 </body>
 </html>
