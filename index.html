@@ -227,14 +227,20 @@ var el=document.getElementById(‘t-’+k);
 if(el){if(names[k]===name)el.classList.add(‘on’);else el.classList.remove(‘on’);}
 });
 }
-document.getElementById(‘t-f’).addEventListener(‘click’,function(){goTab(‘facture’);});
-document.getElementById(‘t-h’).addEventListener(‘click’,function(){goTab(‘historique’);});
-document.getElementById(‘t-c’).addEventListener(‘click’,function(){goTab(‘clients’);});
+[‘click’,‘touchend’].forEach(function(ev){
+document.getElementById(‘t-f’).addEventListener(ev,function(e){e.preventDefault();e.stopPropagation();goTab(‘facture’);},{passive:false});
+document.getElementById(‘t-h’).addEventListener(ev,function(e){e.preventDefault();e.stopPropagation();goTab(‘historique’);},{passive:false});
+document.getElementById(‘t-c’).addEventListener(ev,function(e){e.preventDefault();e.stopPropagation();goTab(‘clients’);},{passive:false});
+});
 
 // BUTTONS - all via addEventListener, no inline onclick
 document.getElementById(‘btn-nouv’).addEventListener(‘click’,nouv);
-document.getElementById(‘btn-course’).addEventListener(‘click’,function(){addL(‘c’);});
-document.getElementById(‘btn-peage’).addEventListener(‘click’,function(){addL(‘p’);});
+[‘click’,‘touchend’].forEach(function(ev){
+document.getElementById(‘btn-course’).addEventListener(ev,function(e){e.preventDefault();e.stopPropagation();addL(‘c’);},{passive:false});
+});
+[‘click’,‘touchend’].forEach(function(ev){
+document.getElementById(‘btn-peage’).addEventListener(ev,function(e){e.preventDefault();e.stopPropagation();addL(‘p’);},{passive:false});
+});
 document.getElementById(‘btn-sauv’).addEventListener(‘click’,function(){sauv(‘brouillon’);});
 document.getElementById(‘btn-env’).addEventListener(‘click’,function(){sauv(‘envoyee’);});
 document.getElementById(‘btn-impr’).addEventListener(‘click’,impr);
